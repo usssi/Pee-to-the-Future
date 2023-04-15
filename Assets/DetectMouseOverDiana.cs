@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class DetectMouseOverDiana : MonoBehaviour
 {
-
-    //private void Update()
-    //{
-    //    OnMouseOver();
-    //}
+    public float  puntosContados;
+    public int multiplicadorDePuntos;
 
     private void OnMouseOver()
     {
         Debug.Log("El cursor está por encima de este objeto con tag diana.");
+
+        puntosContados += multiplicadorDePuntos * Time.deltaTime;
 
     }
 }

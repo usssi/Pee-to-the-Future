@@ -6,18 +6,12 @@ using UnityEngine.UI;
 
 public class pissController : MonoBehaviour
 {
-    public float progress = 0f;
-    public float velocidadDeHacerPipi;
-    public Image progressBar;
+    private float progress = 100;
+    public Image barraDePipi;
 
-    private void Start()
+    public void MakePisGoDown(float velocidadDeHacerPipi)
     {
-
-    }
-
-    private void Update()
-    {
-        progressBar.fillAmount = progress / 100f;
+        barraDePipi.fillAmount = progress / 100f;
 
         progress -= velocidadDeHacerPipi * Time.deltaTime;
     }
