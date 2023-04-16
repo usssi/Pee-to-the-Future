@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MoveWithMouse : MonoBehaviour
 {
+    public float speedCursorMove;
     public Camera cam;
     public Collider Collider;
     RaycastHit hit;
@@ -20,7 +21,7 @@ public class MoveWithMouse : MonoBehaviour
         ray = cam.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit))
         {
-            transform.position = Vector3.MoveTowards(transform.position, hit.point, Time.deltaTime * 5);
+            transform.position = Vector3.MoveTowards(transform.position, hit.point, Time.deltaTime * speedCursorMove);
         }
     }
 }

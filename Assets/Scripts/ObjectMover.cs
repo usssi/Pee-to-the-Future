@@ -19,7 +19,7 @@ public class ObjectMover : MonoBehaviour
 
     void Start()
     {
-        nextTriggerTime = Time.time + Random.Range(minTriggerTime, maxTriggerTime);
+        nextTriggerTime = 5;
         targetPosition = GetRandomPosition();
     }
 
@@ -29,17 +29,26 @@ public class ObjectMover : MonoBehaviour
         {
             targetPosition = GetRandomPosition();
             nextTriggerTime = Time.time + Random.Range(minTriggerTime, maxTriggerTime);
+            transform.position = targetPosition;
         }
 
-        transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * Random.Range(minSpeed, maxSpeed));
+        //transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * Random.Range(minSpeed, maxSpeed));
+
     }
 
     private Vector3 GetRandomPosition()
     {
-        float x = Random.Range(minX, maxX);
-        float z = Random.Range(minZ, maxZ);
-        return new Vector3(x, transform.position.y, z);
+        float ngegativeOrpositive = Random.Range(0, 1);
+        if (ngegativeOrpositive == 1)
+        {
+            float x = Random.Range(minX, maxX);
+            return new Vector3(x, transform.position.y, -0.33f);
+        }
+        else
+        {
+            float x = Random.Range(minZ, maxZ);
+            return new Vector3(x, transform.position.y, -0.33f);
+        }
     }
-
 
 }

@@ -15,5 +15,4 @@ public class ObjectFollower : MonoBehaviour
 
         stationaryObject.rotation = Quaternion.Slerp(stationaryObject.rotation, targetRotation, Time.deltaTime * rotationSpeed * lookAtSpeed);
     }
-
 }
