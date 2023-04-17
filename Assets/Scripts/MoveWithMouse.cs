@@ -10,7 +10,6 @@ public class MoveWithMouse : MonoBehaviour
     RaycastHit hit;
     Ray ray;
 
-
     void Start()
     {
         Physics.IgnoreLayerCollision(5,6);

@@ -31,9 +31,7 @@ public class ObjectMover : MonoBehaviour
             nextTriggerTime = Time.time + Random.Range(minTriggerTime, maxTriggerTime);
             transform.position = targetPosition;
         }
-
         //transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * Random.Range(minSpeed, maxSpeed));
-
     }
 
     private Vector3 GetRandomPosition()
@@ -50,5 +48,4 @@ public class ObjectMover : MonoBehaviour
             return new Vector3(x, transform.position.y, -0.33f);
         }
     }
-
 }

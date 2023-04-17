@@ -32,7 +32,7 @@ public class ControladorDePastillas : MonoBehaviour
             }
         }
 
-        textoPastillas.text = "Disueltas: " + pastillasDisueltas.ToString("0") + "/" + metaDisolver;
+        //textoPastillas.text = "Disueltas: " + pastillasDisueltas.ToString("0") + "/" + metaDisolver;
 
     }
 }

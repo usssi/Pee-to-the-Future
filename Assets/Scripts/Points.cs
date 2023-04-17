@@ -7,12 +7,9 @@ using UnityEngine;
 public class Points : MonoBehaviour
 {
     [HideInInspector] public float points;
-
     [HideInInspector] public int pointsToWin;
     [HideInInspector] public float pointMultiplier;
     public float pointSubstractorPerFrame;
-
-    public TextMeshProUGUI textoPuntos;
 
     public List<PointCounter> pointCounters = new List<PointCounter>();
 
@@ -32,10 +29,6 @@ public class Points : MonoBehaviour
         {
             points = item.GetComponent<PointCounter>().puntosContados;
         }
-
-        textoPuntos.text = "Lleno: " + points.ToString("0") + "%";
-
-        //MakePointGoDown();
     }
 
     void MakePointGoDown()

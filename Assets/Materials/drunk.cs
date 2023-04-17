@@ -11,6 +11,4 @@ public class drunk : MonoBehaviour
         material.SetFloat("_Intensity", intensity);
         Graphics.Blit(source, destination, material);
     }
-
-
 }

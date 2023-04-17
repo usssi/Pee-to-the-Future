@@ -11,6 +11,8 @@ public class PointCounter : MonoBehaviour
     public float baseSpeed = 1.0f; 
     public float minSpeedMultiplier = 1.0f; 
     public float maxSpeedMultiplier = 2.0f;
+    public float goDownMultiplier= 2.0f;
+
 
     public bool canPeeGoDown;
 
@@ -47,7 +49,7 @@ public class PointCounter : MonoBehaviour
         {
             //float speedMultiplier = Mathf.Lerp(maxSpeedMultiplier, minSpeedMultiplier, puntosContados / 100f);
 
-            puntosContados -= Time.deltaTime;
+            puntosContados -= Time.deltaTime * goDownMultiplier;
         }
         else if (puntosContados<=0)
         {
