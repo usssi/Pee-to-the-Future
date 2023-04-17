@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class ControlGame : MonoBehaviour
 {
-
     public Points pointController;
     public pissController pisController;
     public IntensityController intensityController;
@@ -18,12 +17,10 @@ public class ControlGame : MonoBehaviour
     public Vector3 endPosition;
     public float speed = 1.0f;
 
-
     private float t = 0.0f;
 
     public int pointsToWin;
     public int pastillasToWin;
-
 
     public float velocidadBajadaDeBarraDePipi;
 
@@ -32,10 +29,12 @@ public class ControlGame : MonoBehaviour
     public float maxPissWaterY;
 
     public string CondicionDeVictoria;
-
+    public bool canLose;
 
     private void Start()
     {
+        Time.timeScale = 1;
+
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
 
@@ -49,9 +48,16 @@ public class ControlGame : MonoBehaviour
 
     private void Update()
     {
-        pisController.MakePisGoDown(velocidadBajadaDeBarraDePipi);
+        if (canLose)
+        {
+            DeterminarCondicionDeVictoria();
+            pisController.MakePanzaGoDown(velocidadBajadaDeBarraDePipi);
+        }
+        else
+        {
+            MakePissWaterGoAccordingToPoints();
 
-        DeterminarCondicionDeVictoria();
+        }
 
         if (moveInodoro)
         {
@@ -88,17 +94,19 @@ public class ControlGame : MonoBehaviour
                 Debug.Log("PERDISTE!");
                 PantallaPerdida();
             }
-
         }
     }
 
     void PantallaGanada()
     {
+        Time.timeScale = 0;
         SceneManager.LoadScene("winScene");
     }
 
     void PantallaPerdida()
     {
+        Time.timeScale = 0;
+
         SceneManager.LoadScene("loseScene");
     }
 
