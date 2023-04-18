@@ -1861,14 +1861,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1570166645}
         m_TargetAssemblyTypeName: manejadordesencenas, Assembly-CSharp
-        m_MethodName: BotonRecargarMismaEscena
-        m_Mode: 1
+        m_MethodName: BotonCargarEscena
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: poopTest2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &559806896
@@ -2110,7 +2110,7 @@ MonoBehaviour:
   pastillasControl: {fileID: 585769385}
   CondicionDeVictoria: llenarInodoro
   canLose: 1
-  togglePeeParticles: 0
+  togglePeeParticles: 1
   togglePeeNoise: 1
   pointsToWin: 100
   pissWater: {fileID: 767583517}
@@ -2121,6 +2121,7 @@ MonoBehaviour:
   canvasLose: {fileID: 599193584}
   canvasPause: {fileID: 696703797}
   canvasPlay: {fileID: 1198658241}
+  metaDisolver: 0
 --- !u!114 &585769385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2136,6 +2137,7 @@ MonoBehaviour:
   listaDisolvedores: []
   pastillasDisueltas: 0
   metaDisolver: 0
+  metaDisolverTexto: 0
   disolveMultiplier: 1
   textoPastillas: {fileID: 0}
 --- !u!114 &585769386
@@ -2163,9 +2165,12 @@ MonoBehaviour:
   targetAlpha: 0.35
   targetColor: {r: 1, g: 1, b: 1, a: 1}
   colorChangeMultiplier: 0.001
-  panza: {fileID: 1646311470}
+  panza: {fileID: 739203661}
+  isWey: 1
   minPanzaScaleZ: 0.58
   maxPanzaScaleZ: 0.9
+  endPanzaY: 0.56
+  startPanzaY: 1.1
 --- !u!114 &585769387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2278,7 +2283,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 599193580}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
@@ -2486,6 +2491,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629723960}
   m_CullTransparentMesh: 1
+--- !u!1001 &672538848
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 963194228}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 30dd5c1a6bf06ba40aaff275da3470c1, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30dd5c1a6bf06ba40aaff275da3470c1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30dd5c1a6bf06ba40aaff275da3470c1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30dd5c1a6bf06ba40aaff275da3470c1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30dd5c1a6bf06ba40aaff275da3470c1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.096
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30dd5c1a6bf06ba40aaff275da3470c1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30dd5c1a6bf06ba40aaff275da3470c1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30dd5c1a6bf06ba40aaff275da3470c1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8797738
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30dd5c1a6bf06ba40aaff275da3470c1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.47539252
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30dd5c1a6bf06ba40aaff275da3470c1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30dd5c1a6bf06ba40aaff275da3470c1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30dd5c1a6bf06ba40aaff275da3470c1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -16.77
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30dd5c1a6bf06ba40aaff275da3470c1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30dd5c1a6bf06ba40aaff275da3470c1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 30dd5c1a6bf06ba40aaff275da3470c1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 30dd5c1a6bf06ba40aaff275da3470c1, type: 3}
+      propertyPath: m_Name
+      value: El_wey
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 30dd5c1a6bf06ba40aaff275da3470c1, type: 3}
 --- !u!1 &673855560
 GameObject:
   m_ObjectHideFlags: 0
@@ -2536,7 +2614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puntosContados: 0
   baseSpeed: 2
-  minSpeedMultiplier: 10
+  minSpeedMultiplier: 12
   maxSpeedMultiplier: 15
   goDownMultiplier: 3
   canPeeGoDown: 1
@@ -3004,6 +3082,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726327596}
   m_CullTransparentMesh: 1
+--- !u!1 &739203661 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 30dd5c1a6bf06ba40aaff275da3470c1, type: 3}
+  m_PrefabInstance: {fileID: 672538848}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &739203664 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 30dd5c1a6bf06ba40aaff275da3470c1, type: 3}
+  m_PrefabInstance: {fileID: 672538848}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &767583517
 GameObject:
   m_ObjectHideFlags: 0
@@ -3514,6 +3602,7 @@ Transform:
   m_Children:
   - {fileID: 2025383201}
   - {fileID: 1646311474}
+  - {fileID: 739203664}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
@@ -6112,7 +6201,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1646311472
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6628,6 +6717,7 @@ GameObject:
   - component: {fileID: 1924370943}
   - component: {fileID: 1924370945}
   - component: {fileID: 1924370944}
+  - component: {fileID: 1924370946}
   m_Layer: 5
   m_Name: FraseDeDerrotaRandom
   m_TagString: Untagged
@@ -6754,6 +6844,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1924370942}
   m_CullTransparentMesh: 1
+--- !u!114 &1924370946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924370942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194219ee08f9d2942a023d94e248d048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  miTexto: {fileID: 1924370944}
+  frases:
+  - Ni mareado doy tanto asco
+  - Quien no sepa mearlo, no debe catarlo
+  - El que para mear tiene prisa, termina por mearse la camisa
+  - "Ahora entiendo porqu\xE9 mean sentadas"
 --- !u!1 &1989230398
 GameObject:
   m_ObjectHideFlags: 0

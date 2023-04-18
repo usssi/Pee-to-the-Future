@@ -30,6 +30,8 @@ public class ControlGame : MonoBehaviour
     public Canvas canvasPause;
     public Canvas canvasPlay;
 
+    [Header("Pastillas")]
+    public int metaDisolver;
 
     private void Start()
     {
@@ -40,6 +42,10 @@ public class ControlGame : MonoBehaviour
         cameraResult.enabled = false;
 
         pointController.pointsToWin = pointsToWin;
+
+        pastillasControl.metaDisolver = metaDisolver;
+        pastillasControl.metaDisolverTexto = metaDisolver;
+
     }
 
     private void Update()
@@ -72,6 +78,18 @@ public class ControlGame : MonoBehaviour
             if (pointController.points >= pointsToWin)//cuando la puntuacion llega a puntos para ganar
             {
                 PantallaGanada();
+            }
+            else if (peeController.capacidadPee <= 0)//cuando se te acaba el pis
+            {
+                PantallaPerdida();
+            }
+        }
+
+        if (CondicionDeVictoria == "bugs")
+        {
+            if (pastillasControl.pastillasDisueltas >= metaDisolver)//cuando la puntuacion llega a puntos para ganar
+            {                
+                Invoke("PantallaGanada", 2);
             }
             else if (peeController.capacidadPee <= 0)//cuando se te acaba el pis
             {

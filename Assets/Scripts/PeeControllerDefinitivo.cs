@@ -28,8 +28,11 @@ public class PeeControllerDefinitivo : MonoBehaviour
 
     [Header("Panza")]
     public GameObject panza;
+    public bool isWey;
     public float minPanzaScaleZ = 0.65f;
     public float maxPanzaScaleZ = 0.9f;
+    public float endPanzaY = 0f;
+    public float startPanzaY = 1f;
 
     private void Start()
     {
@@ -50,12 +53,25 @@ public class PeeControllerDefinitivo : MonoBehaviour
     {
         MakePeeGoDown();
 
-        float t = capacidadPee / 100f;
-        float newScaleZ = Mathf.Lerp(minPanzaScaleZ, maxPanzaScaleZ, t);
+        if (!isWey)
+        {
+            float t = capacidadPee / 100f;
+            float newScaleZ = Mathf.Lerp(minPanzaScaleZ, maxPanzaScaleZ, t);
 
-        Vector3 newScale = panza.transform.localScale;
-        newScale.z = newScaleZ;
-        panza.transform.localScale = newScale;
+            Vector3 newScale = panza.transform.localScale;
+            newScale.z = newScaleZ;
+            panza.transform.localScale = newScale;
+        }
+        else
+        {
+            float t = capacidadPee / 100f;
+            float newTransformY = Mathf.Lerp(endPanzaY, startPanzaY, t);
+
+            Vector3 newTransform = panza.transform.localPosition;
+            newTransform.z = newTransformY;
+
+            panza.transform.localPosition = newTransform;
+        }
     }
 
     public void StartPeeingPartycles()

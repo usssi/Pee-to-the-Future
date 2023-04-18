@@ -15,10 +15,8 @@ public class DisolvedorDePastilla : MonoBehaviour
 
         targetScale = Vector3.zero;
 
-        transform.rotation = Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360));
-
-        float randomScale = Random.Range(-0.03f, 0.08f);
-        transform.localScale += new Vector3(randomScale, 0, randomScale);
+        float randomScale = Random.Range(-0.02f, 0.05f);
+        transform.localScale += new Vector3(randomScale, randomScale, randomScale);
     }
 
     private void OnParticleCollision(GameObject other)
