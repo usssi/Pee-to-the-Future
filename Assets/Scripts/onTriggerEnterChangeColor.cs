@@ -11,6 +11,7 @@ public class onTriggerEnterChangeColor : MonoBehaviour
     {
         if (other.transform.tag == "pichi")
         {
+            print("azulVictoria");
             GetComponent<MeshRenderer>().material = materialVictoria;
         }
     }
@@ -19,6 +20,8 @@ public class onTriggerEnterChangeColor : MonoBehaviour
     {
         if (other.transform.tag == "pichi")
         {
+            print("rojoderrota");
+
             GetComponent<MeshRenderer>().material = materialDerrota;
         }
     }

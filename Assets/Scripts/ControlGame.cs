@@ -23,34 +23,23 @@ public class ControlGame : MonoBehaviour
     public float minPissWaterY;
     public float maxPissWaterY;
 
-    [Header("Move Inodoro")]
-    public bool moveInodoro;
-    public Transform inodoro;
-    public Vector3 startPosition;
-    public Vector3 endPosition;
-    public float speed = 1.0f;
-    private float t = 0.0f;
-
     [Header("Canvas")]
     public Camera cameraResult;
     public Canvas canvasWin;
     public Canvas canvasLose;
     public Canvas canvasPause;
+    public Canvas canvasPlay;
+
 
     private void Start()
     {
+        canvasPlay.enabled = true;
         Time.timeScale = 1;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
         cameraResult.enabled = false;
 
         pointController.pointsToWin = pointsToWin;
-
-        if (moveInodoro)
-        {
-            startPosition += inodoro.position;
-            endPosition += inodoro.position;
-        }
     }
 
     private void Update()
@@ -63,11 +52,6 @@ public class ControlGame : MonoBehaviour
         else
         {
             MakePissWaterGoAccordingToPoints();
-        }
-
-        if (moveInodoro)
-        {
-            MakeInodoroMove();
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -94,7 +78,6 @@ public class ControlGame : MonoBehaviour
                 PantallaPerdida();
             }
         }
-
     }
 
     #region region UI
@@ -104,6 +87,7 @@ public class ControlGame : MonoBehaviour
         Cursor.visible = true;
         canvasWin.enabled = true;
         cameraResult.enabled = true;
+        canvasPlay.enabled = false;
     }
 
     void PantallaPerdida()
@@ -112,6 +96,8 @@ public class ControlGame : MonoBehaviour
         Cursor.visible = true;
         canvasLose.enabled = true;
         cameraResult.enabled = true;
+        canvasPlay.enabled = false;
+
     }
 
     public void TogglePantallaPausa()
@@ -124,6 +110,8 @@ public class ControlGame : MonoBehaviour
                 Cursor.visible = false;
                 canvasPause.enabled = false;
                 cameraResult.enabled = false;
+                canvasPlay.enabled = true;
+
             }
             else
             {
@@ -131,6 +119,8 @@ public class ControlGame : MonoBehaviour
                 Cursor.visible = true;
                 canvasPause.enabled = true;
                 cameraResult.enabled = true;
+                canvasPlay.enabled = false;
+
             }
         }
     }
@@ -145,9 +135,4 @@ public class ControlGame : MonoBehaviour
         pissWater.transform.position = pos;
     }
 
-    void MakeInodoroMove()
-    {
-        t += Time.deltaTime * speed;
-        inodoro.transform.position = Vector3.Lerp(startPosition, endPosition, Mathf.PingPong(t, 1.0f));
-    }
 }

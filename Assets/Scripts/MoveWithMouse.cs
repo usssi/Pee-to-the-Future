@@ -6,7 +6,7 @@ public class MoveWithMouse : MonoBehaviour
 {
     public float speedCursorMove;
     public Camera cam;
-    public Collider Collider;
+    public Collider[] collidersIgnorados;
     RaycastHit hit;
     Ray ray;
 

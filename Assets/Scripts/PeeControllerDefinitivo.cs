@@ -109,7 +109,9 @@ public class PeeControllerDefinitivo : MonoBehaviour
             print("Comienza feedback particulas de pee");
 
             ParticleSystem.MainModule particleSystem = peertycleSystem.GetComponent<ParticleSystem>().main;
-            
+            ParticleSystem.MainModule particleSystemSalpicaduras = salpicaduras.GetComponent<ParticleSystem>().main;
+            ParticleSystem.MainModule particleSystemCharco = charco.GetComponent<ParticleSystem>().main;
+
             //gravity
             particleSystem.gravityModifierMultiplier += speedGravityMultiplier * Time.deltaTime;
 
@@ -121,6 +123,7 @@ public class PeeControllerDefinitivo : MonoBehaviour
             else
             {
                 maxPartycle = 0;
+                particleSystemCharco.startColor = Color.clear;
             }
             particleSystem.maxParticles = (int)maxPartycle;
 
@@ -133,6 +136,9 @@ public class PeeControllerDefinitivo : MonoBehaviour
             }
 
             particleSystem.startColor = targetColor;
+            particleSystemSalpicaduras.startColor = targetColor;
+            particleSystemCharco.startColor = targetColor/2;
+
         }
     }
 }
