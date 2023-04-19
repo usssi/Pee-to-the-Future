@@ -94,7 +94,8 @@ public class ControlGame : MonoBehaviour
             }
             else if (peeController.capacidadPee <= 0)//cuando se te acaba el pis
             {
-                PantallaPerdida();
+                pastillasControl.isLost = true;
+                Invoke("PantallaPerdida", 1.5f);
             }
         }
     }

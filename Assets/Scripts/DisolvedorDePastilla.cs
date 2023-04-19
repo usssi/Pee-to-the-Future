@@ -9,14 +9,38 @@ public class DisolvedorDePastilla : MonoBehaviour
 
     [HideInInspector] public bool isDisolved;
 
+    public Material rojoFuerte;
+    public Material verdeFuerte;
+    public Material rojoNatural;
+
+    public bool isWin;
+    public bool isLose;
+
+
     private void Start()
     {
         scaleSpeed = FindObjectOfType<ControladorDePastillas>().disolveMultiplier;
-
         targetScale = Vector3.zero;
-
         float randomScale = Random.Range(-0.02f, 0.05f);
         transform.localScale += new Vector3(randomScale, randomScale, randomScale);
+    }
+
+    private void Update()
+    {
+        if (!isWin)
+        {
+            GetComponent<MeshRenderer>().material = rojoNatural;
+        }
+        else
+        {
+            GetComponent<MeshRenderer>().material = rojoNatural;
+
+        }
+        if (isLose)
+        {
+            GetComponent<MeshRenderer>().material = rojoFuerte;
+
+        }
     }
 
     private void OnParticleCollision(GameObject other)
@@ -24,6 +48,8 @@ public class DisolvedorDePastilla : MonoBehaviour
         if (transform.localScale.x >= 0.07)
         {
             transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime * scaleSpeed);
+            GetComponent<MeshRenderer>().material = rojoFuerte;
+
         }
         else
         {
