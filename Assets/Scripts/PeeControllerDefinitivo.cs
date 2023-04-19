@@ -21,13 +21,15 @@ public class PeeControllerDefinitivo : MonoBehaviour
     public float maxPartycleMultiplier = 1;
     public float maxPartycle = 10;
     public float targetAlpha = 25;
-    public Color targetColor = Color.white.WithAlpha(.25f);
+    public Color targetColor = Color.white;
 
     public float colorChangeMultiplier= 1f;
 
-
     [Header("Panza")]
     public GameObject panza;
+    public GameObject brazos;
+    public float treshMoveArm;
+
     public bool isWey;
     public float minPanzaScaleZ = 0.65f;
     public float maxPanzaScaleZ = 0.9f;
@@ -42,6 +44,16 @@ public class PeeControllerDefinitivo : MonoBehaviour
     private void Update()
     {
         PeeFeedbackRunningOut();
+    }
+
+    public void StartPeeingPartycles()
+    {
+
+    }
+
+    public void StopPeeingPartycles()
+    {
+
     }
 
     void MakePeeGoDown()
@@ -68,20 +80,16 @@ public class PeeControllerDefinitivo : MonoBehaviour
             float newTransformY = Mathf.Lerp(endPanzaY, startPanzaY, t);
 
             Vector3 newTransform = panza.transform.localPosition;
+
             newTransform.z = newTransformY;
 
             panza.transform.localPosition = newTransform;
+
+            if (panza.transform.localPosition.z <= treshMoveArm)
+            {
+                brazos.transform.parent = panza.transform;
+            }
         }
-    }
-
-    public void StartPeeingPartycles()
-    {
-
-    }
-
-    public void StopPeeingPartycles()
-    {
-
     }
 
     public void ToggleParticles(bool canParticle)

@@ -17,6 +17,8 @@ public class ObjectMover : MonoBehaviour
     private float nextTriggerTime;
     private Vector3 targetPosition;
 
+    public float distaciaSpawn = 0;
+
     void Start()
     {
         nextTriggerTime = 5;
@@ -40,12 +42,12 @@ public class ObjectMover : MonoBehaviour
         if (ngegativeOrpositive == 1)
         {
             float x = Random.Range(minX, maxX);
-            return new Vector3(x, transform.position.y, -0.33f);
+            return new Vector3(x, transform.position.y, distaciaSpawn);
         }
         else
         {
             float x = Random.Range(minZ, maxZ);
-            return new Vector3(x, transform.position.y, -0.33f);
+            return new Vector3(x, transform.position.y, distaciaSpawn);
         }
     }
 }

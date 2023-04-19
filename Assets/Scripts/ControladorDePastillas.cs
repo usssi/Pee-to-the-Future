@@ -38,12 +38,26 @@ public class ControladorDePastillas : MonoBehaviour
 
         if (textoPastillas != null)
         {
-            textoPastillas.text = "kill " + metaDisolverTexto + " bugs";
-            
+            if (metaDisolverTexto > 1)
+            {
+                textoPastillas.text = "kill " + metaDisolverTexto + " bugs";
+
+            }
+            if (metaDisolverTexto == 1)
+            {
+                textoPastillas.text = "kill " + metaDisolverTexto + " bug";
+
+            }
+
             if (metaDisolverTexto <= 0)
             {
                 textoPastillas.text = "you win!";
                 TextColorAnimation();
+
+                foreach (var pastilla in listaDisolvedores.ToList())
+                {
+                    pastilla.GetComponent<MeshRenderer>().material.color = Color.green;
+                }
             }
         }
     }

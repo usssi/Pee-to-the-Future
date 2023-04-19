@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -24,7 +25,7 @@ public class ControlGame : MonoBehaviour
     public float maxPissWaterY;
 
     [Header("Canvas")]
-    public Camera cameraResult;
+    public Camera cameraLose;
     public Canvas canvasWin;
     public Canvas canvasLose;
     public Canvas canvasPause;
@@ -39,7 +40,7 @@ public class ControlGame : MonoBehaviour
         Time.timeScale = 1;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
-        cameraResult.enabled = false;
+        cameraLose.enabled = false;
 
         pointController.pointsToWin = pointsToWin;
 
@@ -89,7 +90,7 @@ public class ControlGame : MonoBehaviour
         {
             if (pastillasControl.pastillasDisueltas >= metaDisolver)//cuando la puntuacion llega a puntos para ganar
             {                
-                Invoke("PantallaGanada", 2);
+                Invoke("PantallaGanada", 1.5f);
             }
             else if (peeController.capacidadPee <= 0)//cuando se te acaba el pis
             {
@@ -104,8 +105,9 @@ public class ControlGame : MonoBehaviour
         Time.timeScale = 0;
         Cursor.visible = true;
         canvasWin.enabled = true;
-        cameraResult.enabled = true;
+        cameraLose.enabled = true;
         canvasPlay.enabled = false;
+
     }
 
     void PantallaPerdida()
@@ -113,7 +115,7 @@ public class ControlGame : MonoBehaviour
         Time.timeScale = 0;
         Cursor.visible = true;
         canvasLose.enabled = true;
-        cameraResult.enabled = true;
+        cameraLose.enabled = true;
         canvasPlay.enabled = false;
 
     }
@@ -127,18 +129,18 @@ public class ControlGame : MonoBehaviour
                 Time.timeScale = 1;
                 Cursor.visible = false;
                 canvasPause.enabled = false;
-                cameraResult.enabled = false;
-                canvasPlay.enabled = true;
+                cameraLose.enabled = false;
 
+                canvasPlay.enabled = true;
             }
             else
             {
                 Time.timeScale = 0;
                 Cursor.visible = true;
                 canvasPause.enabled = true;
-                cameraResult.enabled = true;
-                canvasPlay.enabled = false;
+                cameraLose.enabled = true;
 
+                canvasPlay.enabled = false;
             }
         }
     }
