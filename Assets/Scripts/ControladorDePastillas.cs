@@ -16,12 +16,13 @@ public class ControladorDePastillas : MonoBehaviour
 
     public TextMeshProUGUI textoPastillas;
 
+    [HideInInspector] public bool isLost;
+
     private void Start()
     {
         DisolvedorDePastilla[] disolvedores = FindObjectsOfType<DisolvedorDePastilla>();
         listaDisolvedores = new List<DisolvedorDePastilla>(disolvedores);
     }
-    
 
     private void Update()
     {
@@ -38,26 +39,33 @@ public class ControladorDePastillas : MonoBehaviour
 
         if (textoPastillas != null)
         {
-            if (metaDisolverTexto > 1)
+            if (!isLost)
             {
-                textoPastillas.text = "kill " + metaDisolverTexto + " bugs";
-
-            }
-            if (metaDisolverTexto == 1)
-            {
-                textoPastillas.text = "kill " + metaDisolverTexto + " bug";
-
-            }
-
-            if (metaDisolverTexto <= 0)
-            {
-                textoPastillas.text = "you win!";
-                TextColorAnimation();
-
-                foreach (var pastilla in listaDisolvedores.ToList())
+                if (metaDisolverTexto > 1)
                 {
-                    pastilla.GetComponent<MeshRenderer>().material.color = Color.green;
+                    textoPastillas.text = "kill " + metaDisolverTexto + " bugs";
+
                 }
+                if (metaDisolverTexto == 1)
+                {
+                    textoPastillas.text = "kill " + metaDisolverTexto + " bug";
+
+                }
+
+                if (metaDisolverTexto <= 0)
+                {
+                    textoPastillas.text = "you win!";
+                    TextColorAnimation();
+
+                    foreach (var pastilla in listaDisolvedores.ToList())
+                    {
+                        pastilla.GetComponent<MeshRenderer>().material.color = Color.green;
+                    }
+                }
+            }
+            else
+            {
+                TextLose();
             }
         }
     }
@@ -88,5 +96,12 @@ public class ControladorDePastillas : MonoBehaviour
     void TextToGreen()
     {
         textoPastillas.color = Color.green;
+    }
+
+    void TextLose()
+    {
+        textoPastillas.color = Color.red;
+        textoPastillas.text = "you lose!";
+
     }
 }
