@@ -15,6 +15,8 @@ public class DisolvedorDePastilla : MonoBehaviour
 
     public bool isWin;
     public bool isLose;
+    public float deadSize;
+
 
 
     private void Start()
@@ -33,19 +35,17 @@ public class DisolvedorDePastilla : MonoBehaviour
         }
         else
         {
-            GetComponent<MeshRenderer>().material = rojoNatural;
-
+            GetComponent<MeshRenderer>().material = verdeFuerte;
         }
         if (isLose)
         {
             GetComponent<MeshRenderer>().material = rojoFuerte;
-
         }
     }
 
     private void OnParticleCollision(GameObject other)
     {
-        if (transform.localScale.x >= 0.07)
+        if (transform.localScale.x >= deadSize)
         {
             transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime * scaleSpeed);
             GetComponent<MeshRenderer>().material = rojoFuerte;

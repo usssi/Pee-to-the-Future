@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -44,12 +45,10 @@ public class ControladorDePastillas : MonoBehaviour
                 if (metaDisolverTexto > 1)
                 {
                     textoPastillas.text = "kill " + metaDisolverTexto + " bugs";
-
                 }
                 if (metaDisolverTexto == 1)
                 {
                     textoPastillas.text = "kill " + metaDisolverTexto + " bug";
-
                 }
 
                 if (metaDisolverTexto <= 0)
@@ -59,13 +58,20 @@ public class ControladorDePastillas : MonoBehaviour
 
                     foreach (var pastilla in listaDisolvedores.ToList())
                     {
-                        pastilla.GetComponent<MeshRenderer>().material.color = Color.green;
+                        pastilla.isLose = false;
+                        pastilla.isWin = true;
                     }
                 }
             }
             else
             {
                 TextLose();
+
+                foreach (var pastilla in listaDisolvedores.ToList())
+                {
+                    pastilla.isLose = true;
+                    pastilla.isWin = false;
+                }
             }
         }
     }
