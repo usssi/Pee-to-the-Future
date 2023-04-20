@@ -11,6 +11,8 @@ public class ControlGame : MonoBehaviour
     public Points pointController;
     public PeeControllerDefinitivo peeController;
     public ControladorDePastillas pastillasControl;
+    public runnerController runnerController;
+
 
     [Header("General Game Stuff")]
     public string CondicionDeVictoria;
@@ -30,9 +32,15 @@ public class ControlGame : MonoBehaviour
     public Canvas canvasLose;
     public Canvas canvasPause;
     public Canvas canvasPlay;
+    public Canvas canvasEnd;
+
 
     [Header("Pastillas")]
     public int metaDisolver;
+
+    [Header("runner")]
+    public bool playerKill;
+
 
     private void Start()
     {
@@ -98,6 +106,15 @@ public class ControlGame : MonoBehaviour
                 Invoke("PantallaPerdida", 1.5f);
             }
         }
+
+        if (CondicionDeVictoria == "runner")
+        {
+            runnerController.isDead = playerKill;
+            if (playerKill == true)
+            {
+                Invoke("PantallaEnd", .1f);
+            }
+        }
     }
 
     #region region UI
@@ -108,7 +125,6 @@ public class ControlGame : MonoBehaviour
         canvasWin.enabled = true;
         cameraLose.enabled = true;
         canvasPlay.enabled = false;
-
     }
 
     void PantallaPerdida()
@@ -118,12 +134,22 @@ public class ControlGame : MonoBehaviour
         canvasLose.enabled = true;
         cameraLose.enabled = true;
         canvasPlay.enabled = false;
+    }
 
+    void PantallaEnd()
+    {
+        Time.timeScale = 0;
+        Cursor.visible = true;
+        canvasLose.enabled = false;
+        canvasWin.enabled = false;
+        canvasPlay.enabled = false;
+        canvasEnd.enabled = true;
+        cameraLose.enabled = true;
     }
 
     public void TogglePantallaPausa()
     {
-        if (canvasLose.enabled == false && canvasWin.enabled == false)
+        if (canvasLose.enabled == false && canvasWin.enabled == false && canvasEnd.enabled == false)
         {
             if (canvasPause.enabled == true)
             {

@@ -19,6 +19,7 @@ public class manejadordesencenas : MonoBehaviour
 
     public void SalirDelJuego()
     {
+        PlayerPrefs.DeleteAll();
         Application.Quit();
     }
 }

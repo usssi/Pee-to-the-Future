@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.ParticleSystem;
 
@@ -13,24 +14,43 @@ public class ToggleParticleRenderer : MonoBehaviour
     public float maxSize;
     public float minSize;
 
+
     private void OnParticleCollision(GameObject other)
     {
         GameObject particleSystemObject = particula;
-        ParticleSystem particleSystem = particleSystemObject.GetComponent<ParticleSystem>();
+        if (particula != null)
+        {
+            ParticleSystem particleSystem = particleSystemObject.GetComponent<ParticleSystem>();
+            MainModule mainModule = particleSystem.main;
+            MinMaxCurve startLifetime = mainModule.startLifetime;
+            MinMaxCurve startSize = mainModule.startSize;
+            startLifetime.constantMax = maxLife;
+            startLifetime.constantMin = minLife;
 
-        MainModule mainModule = particleSystem.main;
+            startSize.constantMax = maxSize;
+            startSize.constantMin = minSize;
 
-        MinMaxCurve startLifetime = mainModule.startLifetime;
+            mainModule.startLifetime = startLifetime;
+            mainModule.startSize = startSize;
+        }
+        else
+        {
+            GameObject particleSystemObjectFound = GameObject.FindGameObjectWithTag("salpicadura");
+            particula = particleSystemObjectFound;
 
-        MinMaxCurve startSize = mainModule.startSize;
+            ParticleSystem particleSystem = particleSystemObjectFound.GetComponent<ParticleSystem>();
+            MainModule mainModule = particleSystem.main;
+            MinMaxCurve startLifetime = mainModule.startLifetime;
+            MinMaxCurve startSize = mainModule.startSize;
+            startLifetime.constantMax = maxLife;
+            startLifetime.constantMin = minLife;
 
-        startLifetime.constantMax = maxLife;
-        startLifetime.constantMin = minLife;
+            startSize.constantMax = maxSize;
+            startSize.constantMin = minSize;
 
-        startSize.constantMax = maxSize;
-        startSize.constantMin = minSize;
+            mainModule.startLifetime = startLifetime;
+            mainModule.startSize = startSize;
+        }
 
-        mainModule.startLifetime = startLifetime;
-        mainModule.startSize = startSize;
     }
 }
