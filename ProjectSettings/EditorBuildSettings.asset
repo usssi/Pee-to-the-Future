@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/opciones.unity
     guid: f557ecae35e254547a7d5349f7e9afe6
+  - enabled: 1
+    path: Assets/Scenes/cucatrap.unity
+    guid: 0bdc03c71a6258946aa9cb757885a462
   m_configObjects: {}

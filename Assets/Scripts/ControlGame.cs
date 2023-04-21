@@ -13,7 +13,6 @@ public class ControlGame : MonoBehaviour
     public ControladorDePastillas pastillasControl;
     public runnerController runnerController;
 
-
     [Header("General Game Stuff")]
     public string CondicionDeVictoria;
     public bool canLose;
@@ -125,6 +124,8 @@ public class ControlGame : MonoBehaviour
         canvasWin.enabled = true;
         cameraLose.enabled = true;
         canvasPlay.enabled = false;
+        FindObjectOfType<AudioManager>().Play("cheer", 1f);
+        FindObjectOfType<AudioManager>().Play("applause", 1f);
     }
 
     void PantallaPerdida()
@@ -145,6 +146,8 @@ public class ControlGame : MonoBehaviour
         canvasPlay.enabled = false;
         canvasEnd.enabled = true;
         cameraLose.enabled = true;
+        FindObjectOfType<AudioManager>().Play("applause", 1f);
+
     }
 
     public void TogglePantallaPausa()

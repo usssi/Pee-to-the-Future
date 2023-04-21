@@ -212,6 +212,7 @@ public class runnerController : MonoBehaviour
         {
             highScore = puntuacion;
             PlayerPrefs.SetInt("HighScore", highScore);
+
         }
     }
 }

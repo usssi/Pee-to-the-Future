@@ -51,6 +51,5 @@ public class ToggleParticleRenderer : MonoBehaviour
             mainModule.startLifetime = startLifetime;
             mainModule.startSize = startSize;
         }
-
     }
 }

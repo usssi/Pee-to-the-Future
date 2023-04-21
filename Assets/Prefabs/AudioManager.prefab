@@ -1,0 +1,266 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6183402103804068586
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 817154976141571056}
+  - component: {fileID: 2658009072778203407}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &817154976141571056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6183402103804068586}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.50095934, y: 3.0119047, z: -3.1877751}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2658009072778203407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6183402103804068586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9814a2894629da4a9820ed95054093e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnAwakeAmbient: medievalAmbient
+  playOnAwakeMusic: musicaMedieval
+  sounds:
+  - name: applause
+    clip: {fileID: 8300000, guid: 5ca5185ff1700bd499f7f0f37443bc24, type: 3}
+    output: {fileID: 4807274577814634868, guid: e90ef2caed35956499cca1284104016c, type: 2}
+    volume: 0.5
+    pitch: 0
+    loop: 0
+    mute: 0
+    source: {fileID: 0}
+  - name: cheer
+    clip: {fileID: 8300000, guid: 2efe25618167e004fbd232e307cea58a, type: 3}
+    output: {fileID: 4807274577814634868, guid: e90ef2caed35956499cca1284104016c, type: 2}
+    volume: 0.5
+    pitch: 0.1
+    loop: 0
+    mute: 0
+    source: {fileID: 0}
+  - name: zipper
+    clip: {fileID: 8300000, guid: face885a0bf32c5478287bdd99212df2, type: 3}
+    output: {fileID: 4807274577814634868, guid: e90ef2caed35956499cca1284104016c, type: 2}
+    volume: 0.5
+    pitch: 0.1
+    loop: 0
+    mute: 0
+    source: {fileID: 0}
+  - name: zippervar1
+    clip: {fileID: 8300000, guid: 5d383009d5af4df4d94036f102765253, type: 3}
+    output: {fileID: 4807274577814634868, guid: e90ef2caed35956499cca1284104016c, type: 2}
+    volume: 0.5
+    pitch: 0.1
+    loop: 0
+    mute: 0
+    source: {fileID: 0}
+  - name: zippervar2
+    clip: {fileID: 8300000, guid: 2eb1b300e1a8c754ead318856d0cdcd1, type: 3}
+    output: {fileID: 4807274577814634868, guid: e90ef2caed35956499cca1284104016c, type: 2}
+    volume: 0.5
+    pitch: 0.1
+    loop: 0
+    mute: 0
+    source: {fileID: 0}
+  - name: pisMAL
+    clip: {fileID: 8300000, guid: 07da61b21fbae204e9c92c1db818b096, type: 3}
+    output: {fileID: 4807274577814634868, guid: e90ef2caed35956499cca1284104016c, type: 2}
+    volume: 0.5
+    pitch: 0.1
+    loop: 1
+    mute: 0
+    source: {fileID: 0}
+  - name: pisSUELO
+    clip: {fileID: 8300000, guid: d7103b2cb2f465646b426ff758b68d2d, type: 3}
+    output: {fileID: 4807274577814634868, guid: e90ef2caed35956499cca1284104016c, type: 2}
+    volume: 0.5
+    pitch: 0.1
+    loop: 1
+    mute: 0
+    source: {fileID: 0}
+  - name: pis1
+    clip: {fileID: 8300000, guid: 5959c59b87e506a41838730c754885a9, type: 3}
+    output: {fileID: 4807274577814634868, guid: e90ef2caed35956499cca1284104016c, type: 2}
+    volume: 0.5
+    pitch: 0.1
+    loop: 1
+    mute: 0
+    source: {fileID: 0}
+  - name: pis2
+    clip: {fileID: 8300000, guid: aa4833922ead274478767a94fb257aab, type: 3}
+    output: {fileID: 4807274577814634868, guid: e90ef2caed35956499cca1284104016c, type: 2}
+    volume: 0.5
+    pitch: 0.1
+    loop: 1
+    mute: 0
+    source: {fileID: 0}
+  - name: pis3
+    clip: {fileID: 8300000, guid: df50532e5e38f914ca2e67a1bcbdee16, type: 3}
+    output: {fileID: 4807274577814634868, guid: e90ef2caed35956499cca1284104016c, type: 2}
+    volume: 0.5
+    pitch: 0.1
+    loop: 1
+    mute: 0
+    source: {fileID: 0}
+  - name: pis4
+    clip: {fileID: 8300000, guid: c9a3d0e36aa0e79408fd129b98d24bb1, type: 3}
+    output: {fileID: 4807274577814634868, guid: e90ef2caed35956499cca1284104016c, type: 2}
+    volume: 0.5
+    pitch: 0.1
+    loop: 1
+    mute: 0
+    source: {fileID: 0}
+  - name: pisCHAPA
+    clip: {fileID: 8300000, guid: 75fd2986af25496438526e304d86290c, type: 3}
+    output: {fileID: 4807274577814634868, guid: e90ef2caed35956499cca1284104016c, type: 2}
+    volume: 0.5
+    pitch: 0.1
+    loop: 1
+    mute: 0
+    source: {fileID: 0}
+  - name: neon1
+    clip: {fileID: 8300000, guid: 04e5c767542039341b739f0dcb1d46df, type: 3}
+    output: {fileID: 4807274577814634868, guid: e90ef2caed35956499cca1284104016c, type: 2}
+    volume: 0.5
+    pitch: 0.1
+    loop: 1
+    mute: 0
+    source: {fileID: 0}
+  - name: neon2
+    clip: {fileID: 8300000, guid: 3837a7aa997de83408c811b5f9d8025b, type: 3}
+    output: {fileID: 4807274577814634868, guid: e90ef2caed35956499cca1284104016c, type: 2}
+    volume: 0.5
+    pitch: 0.1
+    loop: 1
+    mute: 0
+    source: {fileID: 0}
+  - name: hipo
+    clip: {fileID: 8300000, guid: b00731e6fb41d1440aee75957db52928, type: 3}
+    output: {fileID: 4807274577814634868, guid: e90ef2caed35956499cca1284104016c, type: 2}
+    volume: 0.1
+    pitch: 0.1
+    loop: 0
+    mute: 0
+    source: {fileID: 0}
+  - name: hipovar1
+    clip: {fileID: 8300000, guid: 5b01db399799e624f8e03f6cccc0f007, type: 3}
+    output: {fileID: 4807274577814634868, guid: e90ef2caed35956499cca1284104016c, type: 2}
+    volume: 0.1
+    pitch: 0.1
+    loop: 0
+    mute: 0
+    source: {fileID: 0}
+  - name: hipovar2
+    clip: {fileID: 8300000, guid: aa502872c618b6f4695c0789ba2e6097, type: 3}
+    output: {fileID: 4807274577814634868, guid: e90ef2caed35956499cca1284104016c, type: 2}
+    volume: 0.1
+    pitch: 0.1
+    loop: 0
+    mute: 0
+    source: {fileID: 0}
+  - name: confirm
+    clip: {fileID: 8300000, guid: a769c3d9b6f4fbb43b8e9109699511c9, type: 3}
+    output: {fileID: 4807274577814634868, guid: e90ef2caed35956499cca1284104016c, type: 2}
+    volume: 0.1
+    pitch: 0.1
+    loop: 0
+    mute: 0
+    source: {fileID: 0}
+  - name: decline
+    clip: {fileID: 8300000, guid: 00d634c66cdf94449935f5dc16332d09, type: 3}
+    output: {fileID: 4807274577814634868, guid: e90ef2caed35956499cca1284104016c, type: 2}
+    volume: 0.1
+    pitch: 0.1
+    loop: 0
+    mute: 0
+    source: {fileID: 0}
+  - name: musicaMedieval
+    clip: {fileID: 8300000, guid: d97f526eb2e1dc84aadf0c3b56f315d1, type: 3}
+    output: {fileID: -1007919194458048265, guid: e90ef2caed35956499cca1284104016c, type: 2}
+    volume: 0.1
+    pitch: 0.1
+    loop: 0
+    mute: 0
+    source: {fileID: 0}
+  - name: musicaMainMenu
+    clip: {fileID: 8300000, guid: 70dfd35d50b6bce439d5e0aca19f6262, type: 3}
+    output: {fileID: -1007919194458048265, guid: e90ef2caed35956499cca1284104016c, type: 2}
+    volume: 0.5
+    pitch: 0.1
+    loop: 0
+    mute: 0
+    source: {fileID: 0}
+  - name: medievalAmbient
+    clip: {fileID: 8300000, guid: 83445491e7dc3404a8fb01cb4a978704, type: 3}
+    output: {fileID: 4807274577814634868, guid: e90ef2caed35956499cca1284104016c, type: 2}
+    volume: 0.1
+    pitch: 0.1
+    loop: 0
+    mute: 0
+    source: {fileID: 0}
+  playList:
+  - name: 
+    clip: {fileID: 0}
+    output: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    mute: 0
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 0}
+    output: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    mute: 0
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 0}
+    output: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    mute: 0
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 0}
+    output: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    mute: 0
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 0}
+    output: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    mute: 0
+    source: {fileID: 0}
