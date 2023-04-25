@@ -19,6 +19,10 @@ public class ControladorDePastillas : MonoBehaviour
 
     [HideInInspector] public bool isLost;
 
+    private bool youWon;
+    private bool youlost;
+
+
     private void Start()
     {
         DisolvedorDePastilla[] disolvedores = FindObjectsOfType<DisolvedorDePastilla>();
@@ -55,6 +59,13 @@ public class ControladorDePastillas : MonoBehaviour
                 {
                     textoPastillas.text = "you win!";
                     TextColorAnimation();
+                    if (!youWon)
+                    {
+                        FindObjectOfType<AudioManager>().Play("youWin", 1f);
+                        youWon = true;
+
+                    }
+
 
                     foreach (var pastilla in listaDisolvedores.ToList())
                     {
@@ -66,6 +77,13 @@ public class ControladorDePastillas : MonoBehaviour
             else
             {
                 TextLose();
+                if (!youlost)
+                {
+                    FindObjectOfType<AudioManager>().Play("gameOver", 1f);
+                    youlost = true;
+
+                }
+
 
                 foreach (var pastilla in listaDisolvedores.ToList())
                 {
@@ -107,7 +125,7 @@ public class ControladorDePastillas : MonoBehaviour
     void TextLose()
     {
         textoPastillas.color = Color.red;
-        textoPastillas.text = "you lose!";
+        textoPastillas.text = "Game over!";
 
     }
 }

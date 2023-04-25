@@ -33,7 +33,7 @@ public class ObjectMover : MonoBehaviour
             nextTriggerTime = Time.time + Random.Range(minTriggerTime, maxTriggerTime);
             transform.position = targetPosition;
 
-            float pi = Random.Range(-0.2f, 0.2f);
+            float pi = Random.Range(-0.3f, 0.1f);
             FindObjectOfType<AudioManager>().PlayVar("hipo", 1+pi);
         }
         //transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * Random.Range(minSpeed, maxSpeed));

@@ -8,6 +8,9 @@ TagManager:
   - pichi
   - piso
   - salpicadura
+  - pointcounter
+  - pismal
+  - pischarco
   layers:
   - Default
   - TransparentFX

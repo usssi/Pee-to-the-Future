@@ -6,12 +6,9 @@ using System.Collections.Generic;
 
 public class AudioManager : MonoBehaviour
 {
-    public string playOnAwakeAmbient;
-    public string playOnAwakeMusic;
-
-
     public Sound[] sounds;
     public Sound[] playList;
+    private static AudioManager instance;
 
     /*
     FindObjectOfType<AudioManager>().Play("",1f);
@@ -37,10 +34,16 @@ public class AudioManager : MonoBehaviour
         }
 
         //print("audio manager woke up");
-        FindObjectOfType<AudioManager>().Play(playOnAwakeMusic, 1f);
-        FindObjectOfType<AudioManager>().Play(playOnAwakeAmbient, 1f);
 
-        DontDestroyOnLoad(this.gameObject);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Play(string name, float pitchTone)

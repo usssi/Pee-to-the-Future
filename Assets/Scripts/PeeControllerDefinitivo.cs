@@ -36,9 +36,14 @@ public class PeeControllerDefinitivo : MonoBehaviour
     public float endPanzaY = 0f;
     public float startPanzaY = 1f;
 
+    private bool hasPlayerCasioSound;
+    public Material clockMaterial;
+    public Material emissiveClockMaterial;
+    public GameObject reloj;
+
     private void Start()
     {
-        
+        reloj.SetActive(false);
     }
 
     private void Update()
@@ -130,6 +135,20 @@ public class PeeControllerDefinitivo : MonoBehaviour
     {
         if (capacidadPee <= thresholdPeeRunout)
         {
+
+            if (!hasPlayerCasioSound)
+            {
+                FindObjectOfType<AudioManager>().Play("casio", 1f);
+
+                hasPlayerCasioSound = true;
+                reloj.SetActive(true);
+
+
+                Invoke("OriginalClockMaterial", .5f);
+            }
+
+   
+
             print("Comienza feedback particulas de pee");
 
             ParticleSystem.MainModule particleSystem = peertycleSystem.GetComponent<ParticleSystem>().main;
@@ -164,5 +183,11 @@ public class PeeControllerDefinitivo : MonoBehaviour
             particleSystemCharco.startColor = targetColor/2;
 
         }
+    }
+
+    void OriginalClockMaterial()
+    {
+        reloj.SetActive(false);
+
     }
 }

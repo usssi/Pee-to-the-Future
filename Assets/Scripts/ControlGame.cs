@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class ControlGame : MonoBehaviour
@@ -40,9 +41,18 @@ public class ControlGame : MonoBehaviour
     [Header("runner")]
     public bool playerKill;
 
+    [Header("audioMixer")]
+    public AudioMixer mixer;
+    public string musicalevelstopper;
+    public string ambientlevelstopper;
+    public bool hasWon;
+
+
 
     private void Start()
     {
+        NormalAusio();
+
         canvasPlay.enabled = true;
         Time.timeScale = 1;
         Cursor.visible = false;
@@ -85,6 +95,7 @@ public class ControlGame : MonoBehaviour
 
             if (pointController.points >= pointsToWin)//cuando la puntuacion llega a puntos para ganar
             {
+
                 PantallaGanada();
             }
             else if (peeController.capacidadPee <= 0)//cuando se te acaba el pis
@@ -96,7 +107,8 @@ public class ControlGame : MonoBehaviour
         if (CondicionDeVictoria == "bugs")
         {
             if (pastillasControl.pastillasDisueltas >= metaDisolver)//cuando la puntuacion llega a puntos para ganar
-            {                
+            {
+
                 Invoke("PantallaGanada", 1.5f);
             }
             else if (peeController.capacidadPee <= 0)//cuando se te acaba el pis
@@ -119,17 +131,36 @@ public class ControlGame : MonoBehaviour
     #region region UI
     void PantallaGanada()
     {
-        Time.timeScale = 0;
+        FindObjectOfType<AudioManager>().Stop(musicalevelstopper);
+        FindObjectOfType<AudioManager>().Stop(ambientlevelstopper);
+        stopPeeSounds();
+
+        if (!hasWon)
+        {
+            FindObjectOfType<AudioManager>().Play("applause", 1f);
+            FindObjectOfType<AudioManager>().Play("cheer", 1f);
+            hasWon = true;
+        }
+
         Cursor.visible = true;
         canvasWin.enabled = true;
         cameraLose.enabled = true;
         canvasPlay.enabled = false;
-        FindObjectOfType<AudioManager>().Play("cheer", 1f);
-        FindObjectOfType<AudioManager>().Play("applause", 1f);
+
+        PausseTime();
+    }
+
+    void PausseTime()
+    {
+        stopPeeSounds();
+        Time.timeScale = 0;
+
     }
 
     void PantallaPerdida()
     {
+        stopPeeSounds();
+        DuckAudio();
         Time.timeScale = 0;
         Cursor.visible = true;
         canvasLose.enabled = true;
@@ -139,6 +170,18 @@ public class ControlGame : MonoBehaviour
 
     void PantallaEnd()
     {
+        FindObjectOfType<AudioManager>().Stop(musicalevelstopper);
+        FindObjectOfType<AudioManager>().Stop(ambientlevelstopper);
+
+        stopPeeSounds();
+
+        if (!hasWon)
+        {
+            FindObjectOfType<AudioManager>().Play("applause", 1f);
+            FindObjectOfType<AudioManager>().Play("cheer", 1f);
+            hasWon = true;
+        }
+
         Time.timeScale = 0;
         Cursor.visible = true;
         canvasLose.enabled = false;
@@ -146,14 +189,15 @@ public class ControlGame : MonoBehaviour
         canvasPlay.enabled = false;
         canvasEnd.enabled = true;
         cameraLose.enabled = true;
-        FindObjectOfType<AudioManager>().Play("applause", 1f);
-
     }
 
     public void TogglePantallaPausa()
     {
+
         if (canvasLose.enabled == false && canvasWin.enabled == false && canvasEnd.enabled == false)
         {
+            FindObjectOfType<AudioManager>().Play("button2", 1f);
+
             if (canvasPause.enabled == true)
             {
                 Time.timeScale = 1;
@@ -162,9 +206,11 @@ public class ControlGame : MonoBehaviour
                 cameraLose.enabled = false;
 
                 canvasPlay.enabled = true;
+                NormalAusio();
             }
             else
             {
+                DuckAudio();
                 Time.timeScale = 0;
                 Cursor.visible = true;
                 canvasPause.enabled = true;
@@ -183,6 +229,25 @@ public class ControlGame : MonoBehaviour
         Vector3 pos = pissWater.transform.position;
         pos.y = newY;
         pissWater.transform.position = pos;
+    }
+
+    void DuckAudio()
+    {
+        mixer.SetFloat("musicCutoff", 300f);
+        mixer.SetFloat("sfxCutoff", 500f);
+    }
+    void NormalAusio()
+    {
+        mixer.SetFloat("musicCutoff", 22000);
+        mixer.SetFloat("sfxCutoff", 22000);
+    }
+
+    void stopPeeSounds()
+    {
+        FindObjectOfType<AudioManager>().Stop("pis2");
+        FindObjectOfType<AudioManager>().Stop("pisSUELO");
+        FindObjectOfType<AudioManager>().Stop("pisborde");
+
     }
 
 }

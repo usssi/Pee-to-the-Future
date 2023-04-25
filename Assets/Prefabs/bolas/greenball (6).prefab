@@ -211,6 +211,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lerpSpeed: 1
   canMove: 0
+  canRotate: 0
+  rotateSpeed: 0
   spawnPoint: {fileID: 0}
   despawnPoint: {fileID: 0}
 --- !u!114 &6192071178357194535
@@ -226,3 +228,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMEsh: {fileID: 1978026468}
+  isSpecial: 0

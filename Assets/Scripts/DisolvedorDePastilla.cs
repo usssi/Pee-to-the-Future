@@ -17,6 +17,8 @@ public class DisolvedorDePastilla : MonoBehaviour
     public bool isLose;
     public float deadSize;
 
+    private float pitchUp;
+
 
 
     private void Start()
@@ -49,12 +51,17 @@ public class DisolvedorDePastilla : MonoBehaviour
         {
             transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime * scaleSpeed);
             GetComponent<MeshRenderer>().material = rojoFuerte;
+            FindObjectOfType<AudioManager>().Play("laserHit", 1f+ pitchUp);
+            pitchUp += .025f;
+
 
         }
         else
         {
             isDisolved = true;
             transform.localScale = Vector3.zero;
+            FindObjectOfType<AudioManager>().Play("laserKill", 1f);
+
         }
     }
 

@@ -17,7 +17,6 @@ public class onTriggerEnterChangeColor : MonoBehaviour
     {
         if (other.transform.tag == "pichi")
         {
-            print("verdeVictoria");
             GetComponent<MeshRenderer>().material = materialVictoria;
             FindObjectOfType<AudioManager>().Play("confirm", pitchChangerRule.contadorPuntos);
             pitchChangerRule.contadorPuntos += .1f;
@@ -27,7 +26,6 @@ public class onTriggerEnterChangeColor : MonoBehaviour
     {
         if (other.transform.tag == "pichi")
         {
-            print("rojoderrota");
             FindObjectOfType<AudioManager>().Play("decline", pitchChangerRule.contadorPuntos);
             GetComponent<MeshRenderer>().material = materialDerrota;
             pitchChangerRule.contadorPuntos -= .1f;

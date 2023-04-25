@@ -12,6 +12,10 @@ public class moveDoorWhenPee : MonoBehaviour
     private Quaternion startRotation;
     private Quaternion targetRotation;
 
+    private bool hasplayedDoor;
+    private bool hasplayedMystery;
+
+
     void Start()
     {
 
@@ -30,6 +34,15 @@ public class moveDoorWhenPee : MonoBehaviour
 
     private IEnumerator RotateObject()
     {
+        if (!hasplayedDoor)
+        {
+            FindObjectOfType<AudioManager>().Play("door", 1f);
+            FindObjectOfType<AudioManager>().Play("door2", 1f);
+            hasplayedDoor = true;
+        }
+
+
+
         startRotation = transform.rotation;
         targetRotation = Quaternion.Euler(0f, rotationAngle, 0f);
 
@@ -43,5 +56,11 @@ public class moveDoorWhenPee : MonoBehaviour
         }
 
         transform.rotation = targetRotation;
+        if (!hasplayedMystery)
+        {
+            FindObjectOfType<AudioManager>().Play("futuremystery", 1f);
+            hasplayedMystery = true;
+        }
+
     }
 }

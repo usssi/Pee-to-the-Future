@@ -7,12 +7,22 @@ public class sumarScoreBolas : MonoBehaviour
     private runnerController runner;
     private int pointUp;
     public GameObject textMEsh;
+    public bool isSpecial;
 
     // Start is called before the first frame update
     void Start()
     {
         runner = FindObjectOfType<runnerController>();
-        pointUp = runner.valorBolasVerdesPuntos;
+        if (isSpecial)
+        {
+            pointUp = runner.valorBolasVerdesPuntos*2;
+
+        }
+        else
+        {
+            pointUp = runner.valorBolasVerdesPuntos;
+
+        }
         textMEsh.SetActive(false);
     }
 
@@ -35,6 +45,17 @@ public class sumarScoreBolas : MonoBehaviour
 
     void DisplayText()
     {
+        if (isSpecial)
+        {
+            FindObjectOfType<AudioManager>().Play("coin2", 1f);
+
+        }
+        else
+        {
+            FindObjectOfType<AudioManager>().Play("coin", 1);
+
+        }
+
         textMEsh.GetComponent<TextMesh>().text = "+" + pointUp;
         textMEsh.SetActive(true);
         textMEsh.transform.parent = null;

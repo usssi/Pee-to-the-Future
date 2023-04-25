@@ -14,6 +14,8 @@ public class killPlayer : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
+        FindObjectOfType<AudioManager>().Play("laserKill", 1);
+
         killPlayerBool = true;
         gamecontroller.playerKill = killPlayerBool;
     }

@@ -33,6 +33,8 @@ public class runnerController : MonoBehaviour
 
     public bool isDead;
 
+    public int distancePlusser;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -57,11 +59,19 @@ public class runnerController : MonoBehaviour
     private void Start()
     {
         highScore = PlayerPrefs.GetInt("HighScore", 0);
+        InvokeRepeating("AddToMyInt", 1f, 1f);
     }
+
+    void AddToMyInt()
+    {
+        puntuacion += distancePlusser; // Añade 10 al valor de myInt cada segundo
+    }
+
 
     private void Update()
     {
         HighscoreController();
+
     }
 
     void LateUpdate()
@@ -96,10 +106,13 @@ public class runnerController : MonoBehaviour
                     bola.GetComponent<objectGameplayRunnerMover>().lerpSpeed = lerpSpeed;
                 }
             }
+
+
             textoScore.text = "Score: " + puntuacion;
             textoScore.color = Color.green;
             finalScore.text = "YOUR SCORE: " + puntuacion;
             textHighScore.text = "HIGHSCORE: " + highScore;
+
         }
         else
         {
@@ -122,6 +135,11 @@ public class runnerController : MonoBehaviour
 
             textoScore.text = "Game over";
             textoScore.color = Color.red;
+
+            FindObjectOfType<AudioManager>().Stop("pisborde");
+            FindObjectOfType<AudioManager>().Stop("pisSUELO");
+            FindObjectOfType<AudioManager>().Stop("pis2");
+
         }
 
 
@@ -214,5 +232,12 @@ public class runnerController : MonoBehaviour
             PlayerPrefs.SetInt("HighScore", highScore);
 
         }
+    }
+
+    void SumarporDistancia()
+    {
+        float i = distancePlusser * Time.timeSinceLevelLoad;
+
+        puntuacion += (int)i;
     }
 }
