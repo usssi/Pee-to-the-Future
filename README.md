@@ -20,11 +20,8 @@
 
 **Table of Contents**
 - [About the Game](#about-the-game)
-  - [Gameplay Features](#gameplay-features)
 - [My Role and Impact](#my-role-and-impact-project-lead)
-  - [Key Contributions](#key-contributions)
 - [Development Story](#development-story-rapid-prototyping)
-  - [Rapid Prototypes](#prototypes-developed-over-one-weekend)
 - [Contributors](#contributors)
 - [License](#license)
 
