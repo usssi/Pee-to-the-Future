@@ -5,7 +5,7 @@
 ![](https://img.shields.io/badge/HLSL-7.1%25-green)
 [![itch.io](https://img.shields.io/badge/Play%20on-itch.io-red?logo=itchdotio)](https://ussi.itch.io/pee-to-the-future)
 
-> A quirky first-person game where precision aiming meets absurd challenges. Control the stream, conquer the chaos!
+> A quirky first-person game where precision aiming meets absurd challenges.
 
 ## Game Captures
 
@@ -32,6 +32,9 @@
 **Pee to the Future** is a quirky first-person game where players control the urine stream of a (presumably) drunk protagonist to complete a series of absurd and hilarious challenges. Forget saving the world – your mission involves filling up a toilet bowl, spraying cockroaches off urinals, and tackling other unconventional tasks with gusto.
 
 Originally created for the **VGC Jam 2023** in just one week, the game was released on Itch.io on November 20th, 2023.
+
+* **[View on my Portfolio (More Details & Visuals)](https://www.ussi.dev/portfolio-ussi/pee-to-the-future)**
+* [View on Itch.io (Play/Download Protoype)](https://ussi.itch.io/pee-to-the-future)
 
 ### Gameplay Features
 
