@@ -7,7 +7,14 @@
 
 > A quirky first-person game where precision aiming meets absurd challenges. Control the stream, conquer the chaos!
 
-**Originally created for the VGC Jam 2023.**
+## Game Captures
+
+<p align="center"> 
+  <img src="https://img.itch.zone/aW1hZ2UvMjAyMzA2Mi8xMTkyNjI3Ny5wbmc=/original/1im0Mz.png" alt="Pee To The Future Gameplay Screenshot 1" width="250"/>
+  <img src="https://img.itch.zone/aW1hZ2UvMjAyMzA2Mi8xMTkyNjI3NS5wbmc=/original/mHSaoS.png" alt="Pee To The Future Gameplay Screenshot 2" width="250"/>
+  <img src="https://img.itch.zone/aW1hZ2UvMjAyMzA2Mi8xMTkyNjI3Ni5wbmc=/original/2B5jjx.png" alt="Pee To The Future Gameplay Screenshot 3" width="250"/>
+</p>
+
 
 ---
 
@@ -18,7 +25,6 @@
   - [Key Contributions](#key-contributions)
 - [Development Story](#development-story-rapid-prototyping)
   - [Rapid Prototypes](#prototypes-developed-over-one-weekend)
-- [Game Captures](#game-captures)
 - [Contributors](#contributors)
 - [License](#license)
 
@@ -74,14 +80,6 @@ The core concept underwent rapid iteration over a single weekend prior to the ma
     * Added a new gameplay mode/variation (details may vary based on final game).
     * Implemented first iterations of environmental level design concepts.
     * `Focus:` Define visual style and expand gameplay scope.
-
-## Game Captures
-
-<p align="center"> 
-  <img src="https://img.itch.zone/aW1hZ2UvMjAyMzA2Mi8xMTkyNjI3Ny5wbmc=/original/1im0Mz.png" alt="Pee To The Future Gameplay Screenshot 1" width="250"/>
-  <img src="https://img.itch.zone/aW1hZ2UvMjAyMzA2Mi8xMTkyNjI3NS5wbmc=/original/mHSaoS.png" alt="Pee To The Future Gameplay Screenshot 2" width="250"/>
-  <img src="https://img.itch.zone/aW1hZ2UvMjAyMzA2Mi8xMTkyNjI3Ni5wbmc=/original/2B5jjx.png" alt="Pee To The Future Gameplay Screenshot 3" width="250"/>
-</p>
 
 ## Contributors
 
