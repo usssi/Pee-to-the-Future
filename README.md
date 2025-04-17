@@ -1,317 +1,93 @@
-### Features
+# Pee to the Future
 
-- Support Standard Markdown / CommonMark and GFM(GitHub Flavored Markdown);
-- Full-featured: Real-time Preview, Image (cross-domain) upload, Preformatted text/Code blocks/Tables insert, Code fold, Search replace, Read only, Themes, Multi-languages, L18n, HTML entities, Code syntax highlighting...;
-- Markdown Extras : Support ToC (Table of Contents), Emoji, Task lists, @Links...;
-- Compatible with all major browsers (IE8+), compatible Zepto.js and iPad;
-- Support identification, interpretation, fliter of the HTML tags;
-- Support TeX (LaTeX expressions, Based on KaTeX), Flowchart and Sequence Diagram of Markdown extended syntax;
-- Support AMD/CMD (Require.js & Sea.js) Module Loader, and Custom/define editor plugins;
+![](https://img.shields.io/badge/ShaderLab-53.1%25-blueviolet)
+![](https://img.shields.io/badge/C%23-39.8%25-blue)
+![](https://img.shields.io/badge/HLSL-7.1%25-green)
+[![itch.io](https://img.shields.io/badge/Play%20on-itch.io-red?logo=itchdotio)](https://ussi.itch.io/pee-to-the-future)
 
-# Editor.md
+> A quirky first-person game where precision aiming meets absurd challenges. Control the stream, conquer the chaos!
 
-![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
+**Originally created for the VGC Jam 2023.**
 
-![](https://img.shields.io/github/stars/pandao/editor.md.svg) ![](https://img.shields.io/github/forks/pandao/editor.md.svg) ![](https://img.shields.io/github/tag/pandao/editor.md.svg) ![](https://img.shields.io/github/release/pandao/editor.md.svg) ![](https://img.shields.io/github/issues/pandao/editor.md.svg) ![](https://img.shields.io/bower/v/editor.md.svg)
-
+---
 
 **Table of Contents**
+- [About the Game](#about-the-game)
+  - [Gameplay Features](#gameplay-features)
+- [My Role and Impact](#my-role-and-impact-project-lead)
+  - [Key Contributions](#key-contributions)
+- [Development Story](#development-story-rapid-prototyping)
+  - [Rapid Prototypes](#prototypes-developed-over-one-weekend)
+- [Game Captures](#game-captures)
+- [Contributors](#contributors)
+- [License](#license)
 
-[TOCM]
+---
 
-[TOC]
+## About the Game
 
-#H1 header
-##H2 header
-###H3 header
-####H4 header
-#####H5 header
-######H6 header
-#Heading 1 link [Heading link](https://github.com/pandao/editor.md "Heading link")
-##Heading 2 link [Heading link](https://github.com/pandao/editor.md "Heading link")
-###Heading 3 link [Heading link](https://github.com/pandao/editor.md "Heading link")
-####Heading 4 link [Heading link](https://github.com/pandao/editor.md "Heading link") Heading link [Heading link](https://github.com/pandao/editor.md "Heading link")
-#####Heading 5 link [Heading link](https://github.com/pandao/editor.md "Heading link")
-######Heading 6 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+**Pee to the Future** is a quirky first-person game where players control the urine stream of a (presumably) drunk protagonist to complete a series of absurd and hilarious challenges. Forget saving the world – your mission involves filling up a toilet bowl, spraying cockroaches off urinals, and tackling other unconventional tasks with gusto.
 
-##Headers (Underline)
+Originally created for the **VGC Jam 2023** in just one week, the game was released on Itch.io on November 20th, 2023.
 
-H1 Header (Underline)
-=============
+### Gameplay Features
 
-H2 Header (Underline)
--------------
+-   **Unique Core Mechanic:** Control the direction and force of a urine stream with precision.
+-   **Simple Controls:** Utilizes straightforward one-input gameplay, focusing on player skill in aiming and timing.
+-   **Absurd Challenges:** Engage in unconventional tasks across uniquely designed levels.
+-   **Physics-Based Interactions:** Master the stream's arc and impact to interact with the environment effectively.
+-   **Themed Levels:** Progress through distinct environments including a medieval castle bathroom, a night bar restroom, and a construction site porta-potty.
 
-###Characters
-                
-----
+## My Role and Impact (Project Lead)
 
-~~Strikethrough~~ <s>Strikethrough (when enable html tag decode.)</s>
-*Italic*      _Italic_
-**Emphasis**  __Emphasis__
-***Emphasis Italic*** ___Emphasis Italic___
+As the **Project Lead**, I coordinated a diverse team of nine individuals, navigating varying experience levels to ensure smooth collaboration and efficient development under the tight constraints of the game jam (7 days). My focus was on establishing a clear vision and facilitating communication.
 
-Superscript: X<sub>2</sub>，Subscript: O<sup>2</sup>
+Beyond leadership, I was heavily involved in the technical and creative aspects:
 
-**Abbreviation(link HTML abbr tag)**
+### Key Contributions:
 
-The <abbr title="Hyper Text Markup Language">HTML</abbr> specification is maintained by the <abbr title="World Wide Web Consortium">W3C</abbr>.
+-   **Game Systems & Level Design:** Developed the core aiming and stream mechanics (C#), designed player interactions, and crafted the distinct layouts and objectives for each level within the Unity engine.
+-   **Technical Implementation:** Handled primary gameplay programming, implemented scene lighting setups, developed UI elements and interactions (using Unity's UI system), and created custom visual effects including shaders for the "drunk" effect (ShaderLab, HLSL).
+-   **Artistic & Audio Direction:** Contributed to the game's audiovisual identity through 3D modeling, texture work, and implementing the sound design and dynamic music system.
+-   **Production & Team Coordination:** Managed the project scope, organized tasks (e.g., using Trello/HackNPlan), and maintained development workflow efficiency throughout the jam.
 
-###Blockquotes
+## Development Story: Rapid Prototyping
 
-> Blockquotes
+The core concept underwent rapid iteration over a single weekend prior to the main jam week. These prototypes quickly established and refined the fundamental gameplay loop and visual feedback mechanisms.
 
-Paragraphs and Line Breaks
-                    
-> "Blockquotes Blockquotes", [Link](http://localhost/)。
+### Prototypes (Developed over one weekend):
 
-###Links
+1.  **Prototype 1: Core Mechanics & Feedback**
+    * Established the foundational aiming system.
+    * Implemented key visual feedback using Unity's particle system for the stream.
+    * Included initial gameplay elements like "ammo" count and scoring (later iterated upon).
+    * `Focus:` Validate core interaction and aiming feel.
 
-[Links](http://localhost/)
+2.  **Prototype 2: Diegetic UI & Immersion**
+    * Removed most traditional UI elements.
+    * Shifted progress indicators to be fully diegetic within the game world (e.g., fill levels).
+    * Added a prototype for player arms/body presence to enhance first-person immersion.
+    * `Focus:` Enhance player immersion and intuitive feedback.
 
-[Links with title](http://localhost/ "link title")
+3.  **Prototype 3: Visual Polish & Gameplay Expansion**
+    * Introduced a significant visual update using custom shaders to create the distinct "drunk vision" effect.
+    * Added a new gameplay mode/variation (details may vary based on final game).
+    * Implemented first iterations of environmental level design concepts.
+    * `Focus:` Define visual style and expand gameplay scope.
 
-`<link>` : <https://github.com>
+## Game Captures
 
-[Reference link][id/name] 
+<p align="center"> 
+  <img src="https://img.itch.zone/aW1hZ2UvMjAyMzA2Mi8xMTkyNjI3Ny5wbmc=/original/1im0Mz.png" alt="Pee To The Future Gameplay Screenshot 1" width="250"/>
+  <img src="https://img.itch.zone/aW1hZ2UvMjAyMzA2Mi8xMTkyNjI3NS5wbmc=/original/mHSaoS.png" alt="Pee To The Future Gameplay Screenshot 2" width="250"/>
+  <img src="https://img.itch.zone/aW1hZ2UvMjAyMzA2Mi8xMTkyNjI3Ni5wbmc=/original/2B5jjx.png" alt="Pee To The Future Gameplay Screenshot 3" width="250"/>
+</p>
 
-[id/name]: http://link-url/
+## Contributors
 
-GFM a-tail link @pandao
+-   [usssi](https://github.com/usssi) (Joaquin Driussi) - Project Lead, Programming, Design, Art, Sound
+-   [JulianCarrizo](https://github.com/JulianCarrizo) (Julián) 
+-   [zetaon](https://github.com/zetaon) (Simón)
 
-###Code Blocks (multi-language) & highlighting
-
-####Inline code
-
-`$ npm install marked`
-
-####Code Blocks (Indented style)
-
-Indented 4 spaces, like `<pre>` (Preformatted Text).
-
-    <?php
-        echo "Hello world!";
-    ?>
-    
-Code Blocks (Preformatted text):
-
-    | First Header  | Second Header |
-    | ------------- | ------------- |
-    | Content Cell  | Content Cell  |
-    | Content Cell  | Content Cell  |
-
-####Javascript　
-
-```javascript
-function test(){
-	console.log("Hello world!");
-}
- 
-(function(){
-    var box = function(){
-        return box.fn.init();
-    };
-
-    box.prototype = box.fn = {
-        init : function(){
-            console.log('box.init()');
-
-			return this;
-        },
-
-		add : function(str){
-			alert("add", str);
-
-			return this;
-		},
-
-		remove : function(str){
-			alert("remove", str);
-
-			return this;
-		}
-    };
-    
-    box.fn.init.prototype = box.fn;
-    
-    window.box =box;
-})();
-
-var testBox = box();
-testBox.add("jQuery").remove("jQuery");
-```
-
-####HTML code
-
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <mate charest="utf-8" />
-        <title>Hello world!</title>
-    </head>
-    <body>
-        <h1>Hello world!</h1>
-    </body>
-</html>
-```
-
-###Images
-
-Image:
-
-![](https://pandao.github.io/editor.md/examples/images/4.jpg)
-
-> Follow your heart.
-
-![](https://pandao.github.io/editor.md/examples/images/8.jpg)
-
-> 图为：厦门白城沙滩 Xiamen
-
-图片加链接 (Image + Link)：
-
-[![](https://pandao.github.io/editor.md/examples/images/7.jpg)](https://pandao.github.io/editor.md/examples/images/7.jpg "李健首张专辑《似水流年》封面")
-
-> 图为：李健首张专辑《似水流年》封面
-                
-----
-
-###Lists
-
-####Unordered list (-)
-
-- Item A
-- Item B
-- Item C
-     
-####Unordered list (*)
-
-* Item A
-* Item B
-* Item C
-
-####Unordered list (plus sign and nested)
-                
-+ Item A
-+ Item B
-    + Item B 1
-    + Item B 2
-    + Item B 3
-+ Item C
-    * Item C 1
-    * Item C 2
-    * Item C 3
-
-####Ordered list
-                
-1. Item A
-2. Item B
-3. Item C
-                
-----
-                    
-###Tables
-                    
-First Header  | Second Header
-------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell 
-
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-
-| Function name | Description                    |
-| ------------- | ------------------------------ |
-| `help()`      | Display the help window.       |
-| `destroy()`   | **Destroy your computer!**     |
-
-| Item      | Value |
-| --------- | -----:|
-| Computer  | $1600 |
-| Phone     |   $12 |
-| Pipe      |    $1 |
-
-| Left-Aligned  | Center Aligned  | Right Aligned |
-| :------------ |:---------------:| -----:|
-| col 3 is      | some wordy text | $1600 |
-| col 2 is      | centered        |   $12 |
-| zebra stripes | are neat        |    $1 |
-                
-----
-
-####HTML entities
-
-&copy; &  &uml; &trade; &iexcl; &pound;
-&amp; &lt; &gt; &yen; &euro; &reg; &plusmn; &para; &sect; &brvbar; &macr; &laquo; &middot; 
-
-X&sup2; Y&sup3; &frac34; &frac14;  &times;  &divide;   &raquo;
-
-18&ordm;C  &quot;  &apos;
-
-##Escaping for Special Characters
-
-\*literal asterisks\*
-
-##Markdown extras
-
-###GFM task list
-
-- [x] GFM task list 1
-- [x] GFM task list 2
-- [ ] GFM task list 3
-    - [ ] GFM task list 3-1
-    - [ ] GFM task list 3-2
-    - [ ] GFM task list 3-3
-- [ ] GFM task list 4
-    - [ ] GFM task list 4-1
-    - [ ] GFM task list 4-2
-
-###Emoji mixed :smiley:
-
-> Blockquotes :star:
-
-####GFM task lists & Emoji & fontAwesome icon emoji & editormd logo emoji :editormd-logo-5x:
-
-- [x] :smiley: @mentions, :smiley: #refs, [links](), **formatting**, and <del>tags</del> supported :editormd-logo:;
-- [x] list syntax required (any unordered or ordered list supported) :editormd-logo-3x:;
-- [x] [ ] :smiley: this is a complete item :smiley:;
-- [ ] []this is an incomplete item [test link](#) :fa-star: @pandao; 
-- [ ] [ ]this is an incomplete item :fa-star: :fa-gear:;
-    - [ ] :smiley: this is an incomplete item [test link](#) :fa-star: :fa-gear:;
-    - [ ] :smiley: this is  :fa-star: :fa-gear: an incomplete item [test link](#);
-            
-###TeX(LaTeX)
-   
-$$E=mc^2$$
-
-Inline $$E=mc^2$$ Inline，Inline $$E=mc^2$$ Inline。
-
-$$\(\sqrt{3x-1}+(1+x)^2\)$$
-                    
-$$\sin(\alpha)^{\theta}=\sum_{i=0}^{n}(x^i + \cos(f))$$
-                
-###FlowChart
-
-```flow
-st=>start: Login
-op=>operation: Login operation
-cond=>condition: Successful Yes or No?
-e=>end: To admin
-
-st->op->cond
-cond(yes)->e
-cond(no)->op
-```
-
-###Sequence Diagram
-                    
-```seq
-Andrew->China: Says Hello 
-Note right of China: China thinks\nabout it 
-China-->Andrew: How are you? 
-Andrew->>China: I am good thanks!
-```
-
-###End
+## License
+> This project was created for the VGC Jam 2023 and is currently available for free play. 
